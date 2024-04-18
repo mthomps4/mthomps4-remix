@@ -19,7 +19,7 @@ function getPrismaClient() {
 
   const isReadReplicaRegion = !PRIMARY_REGION || PRIMARY_REGION === FLY_REGION;
 
-  if (!isLocalHost) {
+  if (!isLocalHost && FLY_REGION !== undefined) {
     if (databaseUrl.host.endsWith(".internal")) {
       databaseUrl.host = `${FLY_REGION}.${databaseUrl.host}`;
     }
