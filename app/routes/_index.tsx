@@ -5,6 +5,8 @@ import { useOptionalUser } from "~/utils";
 
 export const meta: MetaFunction = () => [{ title: "Remix Notes" }];
 
+const APP_ENV = process.env.APP_ENV || "No APP_ENV Set?!";
+
 export default function Index() {
   const user = useOptionalUser();
   return (
@@ -66,7 +68,7 @@ export default function Index() {
           </div>
         </div>
         <section>
-          <p>{process.env.APP_ENV}</p>
+          <p>{APP_ENV}</p>
         </section>
         <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
           <div className="mt-6 flex flex-wrap justify-center gap-8">
